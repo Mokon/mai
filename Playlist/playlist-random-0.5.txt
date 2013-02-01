@@ -1,0 +1,5 @@
+./maps/random/0.5/2\4.gwmap 38.2132034355964
+./maps/random/0.5/2\7.gwmap 98.2253967444161
+./maps/random/0.5/2\8.gwmap 84.6396103067892
+./maps/random/0.5/2\9.gwmap 58.5979797464466
+./maps/random/0.5/2\6.gwmap 156.994949366117

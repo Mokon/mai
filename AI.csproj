@@ -1,0 +1,239 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{178AAA6B-607C-4927-8102-87F858726B82}</ProjectGuid>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputType>Exe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>SearchHarness</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Net.Mokon.Edu.Unh.CS.AI</RootNamespace>
+    <StartupObject>Net.Mokon.Edu.Unh.CS.AI.Harness.SearchHarness</StartupObject>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>41621D280B9F62A4BFF0079A21F4F0664C1E536A</ManifestCertificateThumbprint>
+    <ManifestKeyFile>AI_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;OpenGl ScreenShot</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>OpenGl ScreenShot</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Presentation">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Tao.FreeGlut, Version=2.4.0.2, Culture=neutral, PublicKeyToken=6e602a6ad6c0d06d, processorArchitecture=MSIL" />
+    <Reference Include="Tao.OpenGl, Version=2.1.0.12, Culture=neutral, PublicKeyToken=1ca010269a4501ef, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.txt" />
+    <Content Include="LICENSE.txt" />
+    <None Include="AI_TemporaryKey.pfx" />
+    <None Include="GridWorld\Map.xsd" />
+    <None Include="mai.sh" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GridWorld\ChokepointGridWorldMaker.cs" />
+    <Compile Include="GridWorld\RoomsGridWorldMaker.cs" />
+    <Compile Include="GridWorld\XMLGridWorldLoader.cs" />
+    <Compile Include="GridWorld\Map.cs">
+      <DependentUpon>Map.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GridWorld\SingleUnitOctileDistanceHeuristic.cs" />
+    <Compile Include="GridWorld\RandomGridWorldMaker.cs" />
+    <Compile Include="GridWorld\HOGGridWorldLoader.cs" />
+    <Compile Include="GridWorld\GenericGridWorldActions.cs" />
+    <Compile Include="GridWorld\GenericGridWorldDynamicState.cs" />
+    <Compile Include="GridWorld\GenericGridWorldLoader.cs" />
+    <Compile Include="GridWorld\GenericGridWorldPathVisualizer.cs" />
+    <Compile Include="GridWorld\GenericGridWorldStaticState.cs" />
+    <Compile Include="GridWorld\GridWorldDynamicState.cs" />
+    <Compile Include="GridWorld\GridWorldFormat.cs" />
+    <Compile Include="GridWorld\GridWorldLoader.cs" />
+    <Compile Include="GridWorld\GridWorldObject.cs" />
+    <Compile Include="GridWorld\GridWorldStaticState.cs" />
+    <Compile Include="GridWorld\Tile.cs" />
+    <Compile Include="GridWorld\Unit.cs" />
+    <Compile Include="Harness\Modes\TimeTestMode.cs" />
+    <Compile Include="Harness\Modes\MakeRoomMaps.cs" />
+    <Compile Include="Harness\Modes\MakeChokepointMaps.cs" />
+    <Compile Include="Harness\Modes\HelpMode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search\Algorithms\Algorithm.cs" />
+    <Compile Include="Search\Algorithms\AlgorithmFactory.cs" />
+    <Compile Include="Search\Algorithms\AStar.cs" />
+    <Compile Include="Search\Algorithms\BestFirstSearch.cs" />
+    <Compile Include="Search\Algorithms\Human.cs" />
+    <Compile Include="Search\Algorithms\DepthFirstSearch.cs" />
+    <Compile Include="Search\Algorithms\Greedy.cs" />
+    <Compile Include="Search\Algorithms\IterativeDeepingSearch.cs" />
+    <Compile Include="Search\Algorithms\LimitableAlgorithm.cs" />
+    <Compile Include="Harness\Modes\AbstractBatchMode.cs" />
+    <Compile Include="Harness\Modes\MakePlayListMode.cs" />
+    <Compile Include="Harness\Modes\DemoPlaylistMode.cs" />
+    <Compile Include="Harness\Modes\MakeScale.cs" />
+    <Compile Include="Harness\VisFlag.cs" />
+    <Compile Include="Search\Algorithms\RealTime\BestFirstSearch.cs" />
+    <Compile Include="Search\Algorithms\RealTime\AnytimeDStarLite.cs" />
+    <Compile Include="Search\Algorithms\RealTime\RealTimeAnytimeDStarLite.cs" />
+    <Compile Include="Search\Algorithms\RealTime\LSSLRTAStar.cs" />
+    <Compile Include="Search\Goals\OnPathGoal.cs" />
+    <Compile Include="Harness\Modes\BatchMode.cs" />
+    <Compile Include="Harness\Modes\ConverterMode.cs" />
+    <Compile Include="Harness\Modes\BatchSingleMode.cs" />
+    <Compile Include="Harness\Modes\BatchThreadedMode.cs" />
+    <Compile Include="Harness\Modes\MakeRandomMaps.cs" />
+    <Compile Include="Harness\SonicOpenGLStateVisualizer.cs" />
+    <Compile Include="Harness\Modes\OrganizeMode.cs" />
+    <Compile Include="Harness\Modes\Mode.cs" />
+    <Compile Include="Harness\Modes\DemoMode.cs" />
+    <Compile Include="Search\Bookkeepings\ParentBookKeeping.cs" />
+    <Compile Include="Search\Algorithms\UniformedCostSearch.cs" />
+    <Compile Include="Search\Algorithms\WeightedAStar.cs" />
+    <Compile Include="Search\Bookkeepings\BookKeeping.cs" />
+    <Compile Include="Harness\OpenGLStateVisualizer.cs" />
+    <Compile Include="Search\Algorithms\NoOp.cs" />
+    <Compile Include="Search\Path2.cs" />
+    <Compile Include="Search\Algorithms\RealTime\LPAStar.cs" />
+    <Compile Include="Search\Algorithms\RealTime\RealTimeDStarLite.cs" />
+    <Compile Include="Search\Algorithms\RealTime\DStarLite.cs" />
+    <Compile Include="Search\Algorithms\RealTime\SvenKey.cs" />
+    <Compile Include="GridWorld\SingleUnitEuclianDistanceHeuristic.cs" />
+    <Compile Include="Search\Bookkeepings\DStarBRTSBookKeeping.cs" />
+    <Compile Include="Search\StateVisualizer.cs" />
+    <Compile Include="Search\DynamicState.cs" />
+    <Compile Include="Search\Algorithms\GenericAlgorithmFactory.cs" />
+    <Compile Include="Search\Goals\Goal.cs" />
+    <Compile Include="Search\Heuristics\Heuristic.cs" />
+    <Compile Include="Search\Heuristics\HeuristicFactory.cs" />
+    <Compile Include="Search\Heuristics\ZeroHeuristic.cs" />
+    <Compile Include="Search\Operator.cs" />
+    <Compile Include="Search\Path.cs" />
+    <Compile Include="Search\PathVisualizer.cs" />
+    <Compile Include="Harness\AlgorithmRunner.cs" />
+    <Compile Include="Search\Algorithms\RealTime\AStar.cs" />
+    <Compile Include="Search\Algorithms\RealTime\BRTS.cs" />
+    <Compile Include="Search\Algorithms\RealTime\BRTSAStar.cs" />
+    <Compile Include="Search\Algorithms\RealTime\BRTSwAStar.cs" />
+    <Compile Include="Search\Algorithms\RealTime\BRTSAStarSorting.cs" />
+    <Compile Include="Search\Utlitity\MapConverter.cs" />
+    <Compile Include="GridWorld\DestinationsReachedGoal.cs" />
+    <Compile Include="Search\Goals\InStateGoal.cs" />
+    <Compile Include="Search\Algorithms\RealTime\RealTimeAlgorithm.cs" />
+    <Compile Include="Harness\SearchHarness.cs" />
+    <Compile Include="Harness\Results.cs" />
+    <Compile Include="GridWorld\SingleUnitManhattenDistanceHeuristic.cs" />
+    <Compile Include="GridWorld\SingleUnitTransformer.cs" />
+    <Compile Include="Search\Transformer.cs" />
+    <Compile Include="Search\StaticState.cs" />
+    <Compile Include="Search\Algorithms\UnlimitedStaticAlgorithm.cs" />
+    <Compile Include="Utilities\CommandLine\CommandLineHandler.cs" />
+    <Compile Include="Utilities\CommandLine\CommandLineException.cs" />
+    <Compile Include="Utilities\CommandLine\CommandLineFlag.cs" />
+    <Compile Include="Utilities\Distance.cs" />
+    <Compile Include="Utilities\Metric.cs" />
+    <Compile Include="Utilities\Files.cs" />
+    <Compile Include="Utilities\IEnumerableExtensions.cs" />
+    <Compile Include="Utilities\MetricDictionary.cs" />
+    <Compile Include="Utilities\PriorityQueue.cs" />
+    <Compile Include="Utilities\Tuple.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxMapWinGIS">
+      <Guid>{C368D713-CC5F-40ED-9F53-F84FE197B96A}</Guid>
+      <VersionMajor>4</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MapWinGIS">
+      <Guid>{C368D713-CC5F-40ED-9F53-F84FE197B96A}</Guid>
+      <VersionMajor>4</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

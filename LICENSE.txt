@@ -1,0 +1,39 @@
+﻿The M License
+Version 1.0
+
+Copyright © 2008-2010, David Bond, All Rights Resevered
+
+1. Definitions
+1.1. "Copyright Holder"
+	means the orginal copyright holder of this work, David Bond.
+1.2. "Acacdemic Purposes"
+	non-commercial (corporate, insitutional, and personal) educational
+	and research use.
+1.3. "Commercial Purposes"
+	for profit use or incorporation with for profit software.
+1.4. "The Work"
+	 the software in source and binary forms along with all documentation and
+	 accompaning files not covered by other licenses.
+
+2. Use
+2.1. The Work may be used for Acacdemic Purposes free of charge.
+2.2. Any changes and/or additions to The Work is subject to this license and
+	a copy of the changes and/or additions must be sent to the Copyright Holder
+2.3. This license may be changed at any time by the Copyright holder without
+  notification by the Copyright Holder.
+2.4. The Work may be freely distributed free of charge AS IS.
+2.5. The above copyright notice and this permission notice shall be included in
+	all copies of The Work.
+2.6. The Work shall not be used for Commercial Purposes.
+
+3. Contributors
+	David Bond, mokon@mokon.net
+	Niels Widger
+
+4. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
